@@ -87,7 +87,9 @@ namespace Quantum.Kata.BasicGates {
     // This is the first operation in this kata that is not self-adjoint, 
     // i.e., applying it for a second time does not return the qubit to the original state. 
     operation AmplitudeChange (alpha : Double, q : Qubit) : Unit is Adj+Ctl {
-        // ...
+        // exp(alpha*Y) = cos(alpha)I + isin(alpha)Y
+        // Ry(alpha) = exp(0.5 * alpha * Y)
+        Ry(2.0 * alpha, q);
     }
 
 
