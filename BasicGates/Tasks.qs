@@ -64,7 +64,7 @@ namespace Quantum.Kata.BasicGates {
     // Note:  |+⟩ and |-⟩ form a different basis for single-qubit states, called X basis.
     // |0⟩ and |1⟩ are called Z basis.
     operation BasisChange (q : Qubit) : Unit is Adj+Ctl {
-        // ...
+        H(q);
     }
 
 
