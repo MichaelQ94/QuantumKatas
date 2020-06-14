@@ -87,7 +87,7 @@ namespace Quantum.Kata.BasicGates {
     // This is the first operation in this kata that is not self-adjoint, 
     // i.e., applying it for a second time does not return the qubit to the original state. 
     operation AmplitudeChange (alpha : Double, q : Qubit) : Unit is Adj+Ctl {
-        // exp(alpha*Y) = cos(alpha)I + isin(alpha)Y
+        // exp(i * alpha*Y) = cos(alpha)I + isin(alpha)Y
         // Ry(alpha) = exp(0.5 * alpha * Y)
         Ry(2.0 * alpha, q);
     }
@@ -127,7 +127,9 @@ namespace Quantum.Kata.BasicGates {
     operation GlobalPhaseChange (q: Qubit) : Unit is Adj+Ctl {
         // Hint: Can you apply one of the rotation gates?
         // Take a look at the functions in the Microsoft.Quantum.Math package to use a common mathematical constant.
-        // ...
+        // Idea: exp(i * theta * I) = cos(theta)I + isin(theta)I => choose theta = pi
+        // R multiplies the input angle by -0.5
+        R(PauliI, 2.0 * PI(), q);
     }
 
 
