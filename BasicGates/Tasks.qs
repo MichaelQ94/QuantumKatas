@@ -149,7 +149,7 @@ namespace Quantum.Kata.BasicGates {
     // Input: Two entangled qubits in Bell state |Φ⁺⟩ = (|00⟩ + |11⟩) / sqrt(2).
     // Goal:  Change the two-qubit state to |Ψ⁺⟩ = (|01⟩ + |10⟩) / sqrt(2).
     operation BellStateChange2 (qs : Qubit[]) : Unit is Adj+Ctl {
-        // ...
+        X(qs[0]); // Yields (|10⟩ + |01⟩) / sqrt(2)
     }
 
 
@@ -157,7 +157,8 @@ namespace Quantum.Kata.BasicGates {
     // Input: Two entangled qubits in Bell state |Φ⁺⟩ = (|00⟩ + |11⟩) / sqrt(2).
     // Goal:  Change the two-qubit state to |Ψ⁻⟩ = (|01⟩ - |10⟩) / sqrt(2).
     operation BellStateChange3 (qs : Qubit[]) : Unit is Adj+Ctl {
-        // ...
+        X(qs[0]); // Yields (|10⟩ + |01⟩) / sqrt(2)
+        Z(qs[0]); // Yields (||01⟩ - |01⟩) / sqrt(2)
     }
 
 
