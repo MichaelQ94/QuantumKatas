@@ -178,7 +178,8 @@ namespace Quantum.Kata.BasicGates {
     // the resulting two-qubit state can not be represented as a tensor product
     // of the states of individual qubits any longer; thus the qubits become entangled.
     operation TwoQubitGate1 (qs : Qubit[]) : Unit is Adj+Ctl {
-        // ...
+        // Initial qubit state is α|00⟩ + β|10⟩)
+        CNOT(qs[0], qs[1]);
     }
 
 
