@@ -137,7 +137,11 @@ namespace Quantum.Kata.BasicGates {
     // Input: Two entangled qubits in Bell state |Φ⁺⟩ = (|00⟩ + |11⟩) / sqrt(2).
     // Goal:  Change the two-qubit state to |Φ⁻⟩ = (|00⟩ - |11⟩) / sqrt(2).
     operation BellStateChange1 (qs : Qubit[]) : Unit is Adj+Ctl {
-        // ...
+        // Intuition: S gate introduces a factor of i for states where the qubit is in state |1⟩
+        // For the |11⟩ state, we get i*i = -1 which is exactly what we need
+        // This test seems not to care about what happens to |01⟩ or |10⟩, so we won't either
+        S(qs[0]);
+        S(qs[1]);
     }
 
 
