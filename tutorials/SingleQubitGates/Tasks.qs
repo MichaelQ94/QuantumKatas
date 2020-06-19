@@ -13,43 +13,39 @@ namespace Quantum.Kata.SingleQubitGates {
     
     // Exercise 1.
     operation ApplyY (q : Qubit) : Unit is Adj+Ctl {
-        // ...
-
+        Y(q);
     }
 
     // Exercise 2.
     operation GlobalPhaseI (q : Qubit) : Unit is Adj+Ctl {
-        // ...
-
+        Z(q); Y(q); X(q);
     }
 
     // Exercise 3.
     operation SignFlipOnZero (q : Qubit) : Unit is Adj+Ctl {
-        // ...
-        
+        X(q); Z(q); X(q);
     }
 
     // Exercise 4.
     operation PrepareMinus (q : Qubit) : Unit is Adj+Ctl {
-        // ...
-
+        X(q); H(q);
     }
 
     // Exercise 5.
     operation ThreeQuatersPiPhase (q : Qubit) : Unit is Adj+Ctl {
-        // ...
-        
+        S(q); T(q);
     }
 
-    // Exercise 5.
+    // Exercise 6.
     operation PrepareRotatedState (alpha : Double, beta : Double, q : Qubit) : Unit is Adj+Ctl {
-        // ...
-        
+        let theta = 2.0 * ArcTan2(beta, alpha);
+        Rx(theta, q);
     }
 
     // Exercise 7.
     operation PrepareArbitraryState (alpha : Double, beta : Double, theta : Double, q : Qubit) : Unit is Adj+Ctl {
-        // ...
-        
+        let phi = 2.0 * ArcTan2(beta, alpha);
+        Ry(phi, q);
+        R1(theta, q);
     }
 }
